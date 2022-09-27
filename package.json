@@ -7,7 +7,7 @@
     "dev": "npx nodemon src/app.js -w src"
   },
   "keywords": [],
-  "author": "Burak Mestan",
+  "author": "hypergrapher",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.2"

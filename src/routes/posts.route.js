@@ -1,6 +1,7 @@
-import { Router } from "express";
-const router = Router();
-import auth from '../middleware/auth.middleware';
+const express = require("express");
+const router = express.Router();
+const auth = require('../middleware/auth.middleware')
+
 
 //localhost:3000/api/
 router.get("/", auth, (req, res, next) => {
@@ -10,4 +11,4 @@ router.get("/", auth, (req, res, next) => {
 });
 
 
-export default router
+module.exports = router;

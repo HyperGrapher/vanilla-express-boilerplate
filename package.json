@@ -2,18 +2,19 @@
   "name": "express-basic-js-template",
   "version": "1.0.0",
   "description": "Express Template",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon --experimental-modules --es-module-specifier-resolution=node index.js -w src",
-    "start": "node --experimental-modules --es-module-specifier-resolution=node index.js",
+    "dev": "npx nodemon index.js -w src",
+    "start": "node index.js",
     "test": "jest"
   },
   "keywords": [],
   "author": "hypergrapher",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "jest": "^29.1.1",
+    "nodemon": "^2.0.2",
+    "supertest": "^6.2.4"
   },
   "dependencies": {
     "dotenv": "^16.0.2",

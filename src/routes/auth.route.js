@@ -1,7 +1,7 @@
-// import { sign } from "jsonwebtoken";
-import { Router } from "express";
-const router = Router();
-import User from "../model/User";
+const express = require("express");
+const router = express.Router();
+const jwt = require("jsonwebtoken");
+const User = require('../model/User')
 
 //localhost:3000/api/auth
 router.get("/", (req, res, next) => {
@@ -33,10 +33,10 @@ router.post("/login", async (req, res, next) => {
 
 	// // create JWT token
 
-	// const token = sign({ id: user._id }, process.env.TOKEN_SECRET);
+	// const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET);
 	// res.header("auth-token", token);
 
 	res.status(200).json({ error: null, message: "Login successful" });
 });
 
-export default router;
+module.exports = router;

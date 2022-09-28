@@ -1,7 +1,7 @@
-import app from "./src/app";
-import { config } from "dotenv";
+const app = require("./src/app");
+const dotenv = require("dotenv");
 
-config();
+dotenv.config();
 
 app.get("/", (_req, res) => {
 	res.json({ message: "HELLO KITTY!" });

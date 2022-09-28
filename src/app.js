@@ -1,31 +1,17 @@
-const express = require("express");
+import authRoutes from "./routes/auth.route";
+import postRoutes from "./routes/posts.route";
+import express, { json, urlencoded } from "express";
 const app = express();
-const authRoutes = require("./routes/auth");
-const postRoutes = require("./routes/posts");
-const mongo = require("mongoose");
-const dotenv = require("dotenv");
 
 /**
  *  In the header file of the request,
  *  include Content-Type: application/json
  */
 
-dotenv.config();
+app.use(json());
+app.use(urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-mongo.connect(
-  process.env.DB_CONNECT,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => {
-    console.log("Connected to MongoDB");
-  }
-);
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
-app.use("/api", authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 
-app.listen(process.env.PORT || "3000", () => {
-  console.log(`Server is running on port: ${process.env.PORT || "3000"}`);
-});
+export default app

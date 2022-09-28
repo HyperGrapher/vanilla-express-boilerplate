@@ -1,28 +1,25 @@
-const mongo = require('mongoose')
+class User {
+	constructor(val) {
+		if (!val.email.includes("@")) {
+			throw new Error("Not a valid email!");
+		}
+		if (val.email.length < 6) {
+			throw new Error("Valid email should have more characters!");
+		}
+		if (val.password.length < 6) {
+			throw new Error("Weak password!");
+		}
+		this.email = val.email;
+		this.password = val.password;
+	}
 
-const userSchema = new mongo.Schema({
-    name: {
-        type: String,
-        required: true,
-        min: 4,
-        max: 15
-    },
-    email: {
-        type: String,
-        required: true,
-        min: 6,
-        max: 255
-    },
-    password: {
-        type: String,
-        required: true,
-        min: 6,
-        max: 512
-    },
-    created_at: {
-        type: Date,
-        default: Date.now
-    }
-})
+	get user() {
+		return { email: this.email };
+	}
 
-module.exports = mongo.model('User', userSchema)
+	save() {
+        return this.user
+	}
+}
+
+module.exports = User;

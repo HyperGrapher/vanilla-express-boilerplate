@@ -3,10 +3,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-app.get("/", (_req, res) => {
-	res.json({ message: "HELLO KITTY!" });
-});
+const PORT = process.env.PORT || "4000";
 
-app.listen(process.env.PORT || "4000", () => {
-	console.log(`Server is running on port: ${process.env.PORT || "4000"}`);
+app.listen(PORT, () => {
+	console.log(`Server is running on port: ${PORT}`);
 });

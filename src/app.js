@@ -1,6 +1,5 @@
 const express = require("express");
 const authRoutes = require("./routes/auth.route");
-const postRoutes = require("./routes/posts.route");
 
 const app = express();
 /**
@@ -12,6 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.use("/api/auth", authRoutes);
-app.use("/api/posts", postRoutes);
+
+app.get("/", (_req, res) => {
+	res.json({ message: "HELLO KITTY!" });
+});
 
 module.exports = app;

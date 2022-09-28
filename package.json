@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npx nodemon index.js -w src",
     "start": "node index.js",
+    "test-w": "jest --watchAll",
     "test": "jest"
   },
   "keywords": [],

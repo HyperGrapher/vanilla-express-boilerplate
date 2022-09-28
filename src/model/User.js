@@ -18,7 +18,6 @@ class User {
 	}
 
 	save() {
-		console.log(`User is saved: ${JSON.stringify(this.user)}`);
         return this.user
 	}
 }

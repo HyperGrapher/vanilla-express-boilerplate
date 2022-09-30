@@ -16,7 +16,6 @@ const create = async (req, res) => {
 const login = async (req, res) => {
 	const { email, password } = req.body;
 
-	console.log({ email, password });
 	res.status(201).json({ user, message: "success", error: null });
 };
 

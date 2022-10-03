@@ -8,4 +8,10 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      # Check for npm updates at 11am
+      time: "18:00"
+      timezone: "Turkey"
+    commit-message:
+      # Prefix all commit messages with "npm"
+      prefix: "npm-"

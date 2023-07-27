@@ -13,7 +13,7 @@
   "author": "hypergrapher",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.6.0",
+    "jest": "^29.6.2",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   },

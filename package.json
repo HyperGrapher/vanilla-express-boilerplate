@@ -15,7 +15,7 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^2.0.22",
-    "supertest": "^6.3.4"
+    "supertest": "^7.0.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
